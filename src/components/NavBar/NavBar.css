@@ -1,0 +1,30 @@
+.container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.item {
+    margin: 5px 10px;
+}
+
+.item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.item a:hover {
+    text-decoration: underline;
+    color: #000;
+}
