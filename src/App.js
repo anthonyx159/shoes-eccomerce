@@ -9,9 +9,9 @@ export const App = () => {
         <>
             <Router>
                 <NavBar/>
-
                 <Switch>
                     <Route path='/' exact component={ ItemListContainer } />
+                    <Route path='/category/:idCategory' exact component={ ItemListContainer } />
                     <Route path='/detalle/:idProducto' exact component={ItemDetailContainer } />
                 </Switch>
 

@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import './ItemList.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getFetch } from '../../Util/getMock'
 
 
@@ -8,14 +8,26 @@ const ItemList = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     
+    const { idCategory } = useParams()
    
     useEffect(() => {
-        getFetch
-        .then(res => {
-            setProducts(res)
-            setLoading(false)
-        }, [])
-    })
+        if(idCategory) {
+            getFetch
+            .then(res => {
+                console.log(res)
+                console.log(idCategory)
+                setProducts(res.filter(product => product.categoria.toLowerCase() == idCategory))
+                setLoading(false)
+            })
+        } else {
+            getFetch
+            .then(res => {
+                setProducts(res)
+                setLoading(false)
+            })
+        }
+
+    }, [idCategory])
     
 
     return (

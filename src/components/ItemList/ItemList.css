@@ -2,7 +2,12 @@
     margin: 10px 10px;
 }
 
+.card-header {
+    text-align: center;
+}
+
 .card-body {
+    width: 200px;   
     display: flex;
     flex-direction: column;
 

@@ -16,11 +16,23 @@ export const NavBar = () => {
                 </div>
                 <ul className="list">
                     <Link to='/'>
-                        <li className="item"><a href="#">Inicio</a></li>
+                        <li className="item">Inicio</li>
                     </Link>
-                    <li className="item"><a href="#">Catalogo</a></li>
-                    <li className="item"><a href="#">Nosotros</a></li>
-                    <li className="item"><a href="#">Carrito</a></li>
+                    <Link to='/category/nike'>
+                        <li className="item">Nike</li>
+                    </Link>
+                    <Link to='/category/adidas'>
+                        <li className="item">Adidas</li>
+                    </Link>
+                    <Link to='/category/puma'>
+                        <li className="item">Puma</li>
+                    </Link>
+                    <Link to='/category/rebook'>
+                        <li className="item">Air Jordan</li>
+                    </Link>
+                    <Link to='/category/vans'>
+                        <li className="item">Vans</li>
+                    </Link>
                 </ul>
             </div>    
         </div>
