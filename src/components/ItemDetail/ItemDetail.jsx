@@ -9,6 +9,7 @@ const ItemDetail = ({prod}) => {
         if (prod.isAvailable) {
             console.log('El item se agrego correctamente')
             agregarItem(prod,cant)
+            
             prod.isAvailable = false
         } else {
             console.log('El item ya fue agregado')
