@@ -17,8 +17,8 @@ const personas = [
     { id: '4', categoria: 'Adidas', title: "Adidas Runner Clasico", price: 227, foto: adidas2},
     { id: '5', categoria: 'Puma', title: "Puma Capsule Runner", price: 257, foto: puma1 },
     { id: '6', categoria: 'Puma', title: "Puma Capsule Sport", price: 227, foto: puma2 },
-    { id: '7', categoria: 'Rebook', title: "Air Jordan Turbo Max", price: 377, foto: airJordan1},
-    { id: '8', categoria: 'Rebook', title: "Nike Air Jordan Runner Clasico", price: 327, foto: airJordan2},
+    { id: '7', categoria: 'Rebook', title: "Rebook Turbo Max", price: 377, foto: airJordan1},
+    { id: '8', categoria: 'Rebook', title: "Rebook Runner Clasico", price: 327, foto: airJordan2},
     { id: '9', categoria: 'Vans', title: "Vans Capsule Runner", price: 298, foto: vans1},
     { id: '10', categoria: 'Vans', title: "Vans Capsule Sport", price: 238, foto: vans2},
   ];

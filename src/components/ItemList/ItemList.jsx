@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import './ItemList.css'
 import { Link, useParams } from 'react-router-dom'
 import { getFetch } from '../../Util/getMock'
+import { getFirestore } from './../../services/getFireBase'
 
 
 const ItemList = () => {
@@ -11,20 +12,27 @@ const ItemList = () => {
     const { idCategory } = useParams()
    
     useEffect(() => {
+
+        const dbQuery = getFirestore()
+
         if(idCategory) {
-            getFetch
-            .then(res => {
-                // console.log(res)
-                console.log(idCategory)
-                setProducts(res.filter(product => product.categoria.toLowerCase() == idCategory))
-                setLoading(false)
-            })
+            dbQuery.collection('items')
+            .get()
+            .then( resp => {
+                let data = resp.docs.map( item => ({id: item.id, ...item.data()}) ) 
+                setProducts(data.filter( product => product.categoria.toLowerCase() == idCategory ))
+            }) 
+            .catch( err => console.log(err) )
+            .finally( () => setLoading(false) )
         } else {
-            getFetch
-            .then(res => {
-                setProducts(res)
-                setLoading(false)
-            })
+
+            dbQuery.collection('items')
+            .get()
+            .then( resp => {
+                setProducts( resp.docs.map( item => ({id: item.id, ...item.data()}) ) )
+            }) 
+            .catch( err => console.log(err) )
+            .finally( () => setLoading(false) )
         }
 
     }, [idCategory])

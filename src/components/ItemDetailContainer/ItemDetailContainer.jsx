@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom'
 import { getFetch } from '../../Util/getMock';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { getFirestore } from './../../services/getFireBase'
 
 
 const ItemDetailContainer = () => {
@@ -9,12 +10,18 @@ const ItemDetailContainer = () => {
     const { idProducto } = useParams()
 
     useEffect(() => {
+
+        const dbQuery = getFirestore()
+
         if(idProducto) {
-            getFetch
-            .then(products => {
-                setProd(products.find(product => product.id === idProducto))
-            })
-            .catch(err => console.log(err))
+
+            dbQuery.collection('items')
+            .get()
+            .then( resp => {
+                let data =  resp.docs.map( item => ({id: item.id, ...item.data()}) ) 
+                setProd(data.find(product => product.id === idProducto))
+            }) 
+            .catch( err => console.log(err) )
         }
     }, [idProducto])
 
