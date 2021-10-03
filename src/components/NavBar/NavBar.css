@@ -28,3 +28,14 @@
     text-decoration: underline;
     color: #000;
 }
+
+.cart-count {
+    text-decoration: none;
+    color: black;
+}
+
+.cart-count span {
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+}

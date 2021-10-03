@@ -2,10 +2,16 @@ import React from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 
+import {useCartContext} from '../../Context/cartContext'
+
 const ItemDetail = ({prod}) => {
 
+    console.log(prod)
+
+    const  {agregarItem} = useCartContext()
+
     const onAdd=(cant)=>{
-        console.log(cant)   
+        agregarItem( prod, cant )
     }  
 
     return (

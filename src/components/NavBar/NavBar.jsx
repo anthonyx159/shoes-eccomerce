@@ -2,8 +2,12 @@ import React from 'react'
 import './NavBar.css'
 import { CartWidget } from '../CartWidget/CartWidget'
 import {Link, NavLink} from 'react-router-dom'
+import { useCartContext } from '../../Context/cartContext'
 
 export const NavBar = () => {
+
+    const { iconCart } = useCartContext()
+
     return (
         <>
         <CartWidget />
@@ -33,6 +37,10 @@ export const NavBar = () => {
                     <Link to='/category/vans'>
                         <li className="item">Vans</li>
                     </Link>
+                    <Link to="/cart" className="cart-count">
+                        <span>{iconCart()}</span>               
+                        Cart
+                    </Link>  
                 </ul>
             </div>    
         </div>

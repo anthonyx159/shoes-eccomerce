@@ -14,7 +14,7 @@ const ItemList = () => {
         if(idCategory) {
             getFetch
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 console.log(idCategory)
                 setProducts(res.filter(product => product.categoria.toLowerCase() == idCategory))
                 setLoading(false)
