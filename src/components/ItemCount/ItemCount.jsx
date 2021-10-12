@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
+import './Itemcount.css'
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial)
@@ -25,27 +26,29 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     return (
-        <div>
-            <h3>soy item Count</h3>
-            <button onClick={sumar}>+</button>
-            <label>{count}</label>
-            <button onClick={restar}>-</button><br/>
+        <>
+            <div className="card-selected__qty">
+                <button onClick={sumar}>+</button>
+                <label>{count}</label>
+                <button onClick={restar}>-</button><br/>
+            </div>
            {cambiarBoton ?
-                <button onClick={agregarCarrito} >Agregar Al carrito</button>                
+           
+                <button onClick={agregarCarrito} className="card-selected__addCart">Agregar Al carrito</button>                
             : 
             <div>
                 <Link to="/cart" >
-                    <button >Terminar Compra</button>            
+                    <button className="card-selected__end">Terminar Compra</button>            
                 </Link>
                 <Link to="/" >
-                    <button >Seguir Comprando</button>      
+                    <button className="card-selected__continue">Seguir Comprando</button>      
                 </Link>
             </div>
             
             }
             
             
-        </div>
+        </>
     )
 }
 

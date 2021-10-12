@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom'
 import { getFetch } from '../../Util/getMock';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { getFirestore } from './../../services/getFireBase'
+import './ItemDetailContainer.css'
 
 
 const ItemDetailContainer = () => {
     const [prod, setProd] = useState({})
+    const [loading, setLoading] = useState(true)
     const { idProducto } = useParams()
 
     useEffect(() => {
@@ -22,13 +24,18 @@ const ItemDetailContainer = () => {
                 setProd(data.find(product => product.id === idProducto))
             }) 
             .catch( err => console.log(err) )
+            .finally( () => setLoading(false) )
         }
     }, [idProducto])
 
     
     return (
         <>
-           <ItemDetail  prod={prod} />
+        { loading ? 
+            <h2 className="item-detail-loading">Cargando...</h2>
+          : 
+          <ItemDetail  prod={prod} />
+        }
         </>
     )
 }

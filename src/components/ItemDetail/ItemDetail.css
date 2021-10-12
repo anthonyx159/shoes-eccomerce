@@ -1,3 +1,16 @@
+.card-selected__content {
+    display: flex;
+    justify-content: center;
+}
+
+.card-selected__body {
+    max-width: 300px;
+}
+
+.card-selected__choose {
+    margin-bottom: 10px;
+}
+
 .detail-product {
     width: 300px;
 }

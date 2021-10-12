@@ -11,7 +11,11 @@ const ItemList = () => {
     
     const { idCategory } = useParams()
    
+    console.log( idCategory )
+
     useEffect(() => {
+
+        setLoading(true)
 
         const dbQuery = getFirestore()
 
@@ -41,20 +45,24 @@ const ItemList = () => {
     return (
         <>
             {   loading ? 
-                    <h2>Cargando.....</h2> 
+                    <h2 className="item-list">Cargando....</h2> 
                 :                
                     products.map(product => 
                     <div key={product.id} className="card" >
                         <div className="card-header">
-                            {product.title} 
+                            <img src={'data:image/png;base64,'+product.img} />
                         </div>
                         <div className="card-body">
-                            <img src={product.foto} />
-                            S/.{product.price}
+                            <div className="card-body__title">
+                                {product.title} 
+                            </div>
+                            <div className="card-body__price">
+                                Precio: S/.{product.price}
+                            </div>
                         </div>
                         <div className="card-footer">
                             <Link to = {`/detalle/${product.id}`} >
-                                <button className="btn btn-outline-primary btn-block">
+                                <button className="card-footer__button">
                                     Comprar
                                 </button>
                             </Link>    

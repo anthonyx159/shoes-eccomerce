@@ -1,0 +1,37 @@
+.header-ec__container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.header-ec__content {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-ec__img img {
+    width: 70px;
+    width: 70px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding: 0
+}
+
+.menu__item {
+    margin: 0 10px;
+}
+
+.menu__item a {
+    color: #000;
+    text-decoration: none;
+    transition: all 1s ease;
+}
+
+.menu__item a:hover {
+    border-bottom: 1px solid #000;
+}
