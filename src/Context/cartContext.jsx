@@ -94,10 +94,6 @@ export const CartContext =({ children })=>{
         localStorage.setItem('products', JSON.stringify([]))
     }
 
-    // function mostrarPersona() {
-    //     console.log()
-    // }    
-    /* console.log(cartList()) */
     return(
         <cartContext.Provider value={{
             cartList,
@@ -106,7 +102,6 @@ export const CartContext =({ children })=>{
             iconCart,
             deleteFromCart,
             precioTotal
-            //mostrarPersona
         }} >
             {children}
         </cartContext.Provider>

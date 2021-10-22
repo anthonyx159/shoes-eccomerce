@@ -1,16 +1,12 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Itemcount.css'
-// import {useCartContext} from '../../Context/cartContext'
 
 const ItemCount = ({stock, initial, onAdd, sizeIsNotSelected, size}) => {
     const [count, setCount] = useState(initial)
     const [cambiarBoton, setCambiarBoton] = useState(true)
     //Solo por primera vez es false
     const [isNotValid, setIsNotValid] = useState(false)
-    
-    //Carlist para el localstorage
-    // const { carList } = useCartContext()
 
     function sumar(){
         if(count < stock){
@@ -33,8 +29,6 @@ const ItemCount = ({stock, initial, onAdd, sizeIsNotSelected, size}) => {
             setIsNotValid(false)
             onAdd(count, size)
             setCambiarBoton(false)
-            // //TEST
-            // console.log(carList)
         }
 
     }

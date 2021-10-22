@@ -20,20 +20,11 @@ export const NavBar = () => {
 
     return (
         <>
-        {/* <CartWidget /> */}
         <h2 className="text-hero">Hola encuentra el calzado perfecto para ti</h2>
         <div className="brand" id="catalogue">
             <div className="brand__container">
                 <div className="brand__content">
-                    {/* <div className="brand">
-                        <Link to='/'>
-                            <div className="brand__text">UrbanSneaker</div>
-                        </Link>
-                    </div> */}
                     <ul className="brand__list">
-                        {/* <Link to='/'>
-                            <li className="brand__item">Inicio</li>
-                        </Link> */}
                         <Link to='/category/nike'  onClick={addClassActive} >
                             <li className="brand__item">Nike</li>
                         </Link>
@@ -49,10 +40,6 @@ export const NavBar = () => {
                         <Link to='/category/vans' onClick={addClassActive} >
                             <li className="brand__item">Vans</li>
                         </Link>
-                        {/* <Link to="/cart" className="cart-count">
-                            <span>{iconCart()}</span>               
-                            Cart
-                        </Link>   */}
                     </ul>
                 </div>    
             </div>
