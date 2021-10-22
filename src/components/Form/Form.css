@@ -1,0 +1,17 @@
+.wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.form-warning {
+    color: red;
+}
+
+.block-1, .block-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-1 input, .block-2 input {
+    width: 300px;
+}

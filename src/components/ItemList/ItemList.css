@@ -3,7 +3,37 @@
 }
 
 .card-body {
+    text-align: left;
+}
+
+.card-body__title {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.card-body__price {
+    line-height: 24px;
+}
+
+.card-header {
+    width: 250px;   
     display: flex;
     flex-direction: column;
 
+}
+
+.card-footer__button {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+
+.item-list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 356px;
 }

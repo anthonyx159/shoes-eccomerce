@@ -1,0 +1,7 @@
+.card-selected__qty {
+    margin-bottom: 10px;
+}
+
+.card-selected__error {
+    color: red;
+}

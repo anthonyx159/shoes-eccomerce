@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 
 export const ItemListContainer = ({ salute }) => {
+
+    const [loading, setLoading] = useState(true)
+
     return (
         <>
-            <h2>Hola { salute } estos son los items que tenemos para ti</h2>
             <div className="card-container">
                 <ItemList />
             </div>
