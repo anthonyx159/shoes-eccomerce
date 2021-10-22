@@ -1,10 +1,42 @@
-.box-items {
+.box {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.box-title {
+    text-align: center;
+}
+
+.box-option {
     display: flex;
+    justify-content: space-between;
+}
+
+.box-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.box-items button {
+.box-item__img img{
+    width: 100px;
+    height: 100px;
+}
+
+.box-item__name {
+    width: 145px;
+}
+
+.box-item__delete {
     width: 30px;
     height: 30px;
     margin-left: 10px;
+    position: absolute;
+    right: -45px;
+}
+
+.car-empty__title, .car-empty__buy {
+    display: block;
+    text-align: center;
 }

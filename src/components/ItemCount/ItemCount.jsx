@@ -1,11 +1,16 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Itemcount.css'
+// import {useCartContext} from '../../Context/cartContext'
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd, sizeIsNotSelected, size}) => {
     const [count, setCount] = useState(initial)
     const [cambiarBoton, setCambiarBoton] = useState(true)
+    //Solo por primera vez es false
+    const [isNotValid, setIsNotValid] = useState(false)
     
+    //Carlist para el localstorage
+    // const { carList } = useCartContext()
 
     function sumar(){
         if(count < stock){
@@ -21,8 +26,17 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const agregarCarrito=()=>{
-        onAdd(count)
-        setCambiarBoton(false)
+        
+        if(sizeIsNotSelected) {
+            setIsNotValid(true)
+        } else {
+            setIsNotValid(false)
+            onAdd(count, size)
+            setCambiarBoton(false)
+            // //TEST
+            // console.log(carList)
+        }
+
     }
 
     return (
@@ -33,8 +47,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button onClick={restar}>-</button><br/>
             </div>
            {cambiarBoton ?
-           
-                <button onClick={agregarCarrito} className="card-selected__addCart">Agregar Al carrito</button>                
+                <>
+                    <button onClick={agregarCarrito} className="card-selected__addCart">Agregar Al carrito</button>  
+                    { (isNotValid && sizeIsNotSelected) && <p className="card-selected__error" >-Seleccione su talla</p>}       
+                </>
             : 
             <div>
                 <Link to="/cart" >
